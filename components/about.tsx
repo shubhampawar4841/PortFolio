@@ -35,10 +35,7 @@ export default function About() {
   
     <p>
       <span className="italic">When I&apos;m not coding</span>, I enjoy playing video games, 
-      watching movies, and going to the gym. I also have a keen interest in{" "}
-      <span className="font-medium">trading and investing</span>, particularly in{" "}
-      <span className="font-medium">Futures and Options</span>, and I am heavily invested in{" "}
-      <span className="font-medium">Cryptocurrencies</span>. Currently, I&apos;m also learning how to play the guitar.
+      watching movies. I also have a keen interest in{" "}
     </p>
   </motion.section>
   

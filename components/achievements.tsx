@@ -11,8 +11,8 @@ import { achievementsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
-export default function Experience() {
-  const { ref } = useSectionInView("Experience");
+export default function Achievements() {
+  const { ref } = useSectionInView("Achievements");
   return (
     <motion.section
       initial={{  opacity: 0, y: 100}}
