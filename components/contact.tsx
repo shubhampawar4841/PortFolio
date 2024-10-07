@@ -10,33 +10,33 @@ import { sendEmail } from "@/actions/sendEmail";
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
 
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent the default form submission
+    const formData = new FormData(event.target);
+    await sendEmail(formData); // Call sendEmail with form data
+  };
+
   return (
     <motion.section
       ref={ref}
       id="contact"
       className="text-center mb-20 sm:mb-28 w-[min(100%,38rem)]"
       initial={{ opacity: 0 }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
       <SectionHeading>Contact Me</SectionHeading>
       <p className="text-gray-700 -mt-4">
         Please contact me directly at{" "}
-        <a className="underline" href="shubhampawar4036@gmail.com">
+        <a className="underline" href="mailto:shubhampawar4036@gmail.com">
           shubhampawar4036@gmail.com
         </a>{" "}
         or through this form.
       </p>
       <form
         className="mt-10 flex flex-col items-center"
-        action={async (formData) => {
-          await sendEmail(formData);
-        }}
+        onSubmit={handleSubmit} // Updated to use onSubmit
       >
         <input
           className="h-14 w-full rounded-lg border border-black/10 px-4"
@@ -58,7 +58,7 @@ export default function Contact() {
           className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105"
         >
           Submit{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
+          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
         </button>
       </form>
     </motion.section>
