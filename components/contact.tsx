@@ -5,15 +5,27 @@ import SectionHeading from "./section-heading";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
+import { sendEmail } from "@/actions/sendEmail"; // Make sure this is properly set up
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    const formData = new FormData(event.target);
-    await sendEmail(formData); // Call sendEmail with form data
+    event.preventDefault(); // Prevent page reload on form submit
+    const formData = new FormData(event.target); // Get form data
+
+    // Optional: Log formData to check
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`);
+    }
+
+    try {
+      await sendEmail(formData); // Call sendEmail function with form data
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message, please try again later.");
+    }
   };
 
   return (
@@ -36,7 +48,7 @@ export default function Contact() {
       </p>
       <form
         className="mt-10 flex flex-col items-center"
-        onSubmit={handleSubmit} // Updated to use onSubmit
+        onSubmit={handleSubmit} // Handle form submission
       >
         <input
           className="h-14 w-full rounded-lg border border-black/10 px-4"
