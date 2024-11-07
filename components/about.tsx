@@ -7,7 +7,7 @@ import { FaCode, FaGamepad, FaFilm } from "react-icons/fa"
 export default function AboutMe() {
   const skills = [
     "C++", "JavaScript", "React", "Next.js", "Node.js", "MongoDB",
-    "Recoil", "PostgreSQL", "TypeScript", "Prisma"
+    "MySQL", "PostgreSQL", "TypeScript", "Prisma", "CloudFlare", "AWS", "FireBase"
   ]
 
   return (
