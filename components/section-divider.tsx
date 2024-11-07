@@ -13,11 +13,11 @@ export default function SectionDivider() {
         <MdKeyboardDoubleArrowDown className="text-5xl" />
       </motion.div>
 
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         className="bg-gray-200 mb-24 mt-4 h-16 w-1 rounded-full hidden sm:block"
-      ></motion.div> */}
+      ></motion.div>
     </div>
   );
 }
