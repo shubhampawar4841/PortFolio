@@ -18,15 +18,16 @@ const fadeInAnimationVariants = {
   }),
 };
 
+// Array of colors for each skill
 const colorClasses = [
-  "bg-red-100 hover:bg-red-200",
-  "bg-blue-100 hover:bg-blue-200",
-  "bg-green-100 hover:bg-green-200",
-  "bg-yellow-100 hover:bg-yellow-200",
-  "bg-purple-100 hover:bg-purple-200",
-  "bg-pink-100 hover:bg-pink-200",
-  "bg-indigo-100 hover:bg-indigo-200",
-  "bg-teal-100 hover:bg-teal-200",
+  "bg-red-100 hover:bg-red-300 text-red-800",
+  "bg-blue-100 hover:bg-blue-300 text-blue-800",
+  "bg-green-100 hover:bg-green-300 text-green-800",
+  "bg-yellow-100 hover:bg-yellow-300 text-yellow-800",
+  "bg-purple-100 hover:bg-purple-300 text-purple-800",
+  "bg-pink-100 hover:bg-pink-300 text-pink-800",
+  "bg-indigo-100 hover:bg-indigo-300 text-indigo-800",
+  "bg-teal-100 hover:bg-teal-300 text-teal-800",
 ];
 
 export default function Skills() {
