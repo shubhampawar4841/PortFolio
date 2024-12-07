@@ -21,12 +21,7 @@ export default function AboutMe() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto"
-        >
+  
               Final year student pursuing a Bachelor of Technology degree in{" "}
               <span className="font-semibold text-blue-600">Electronics and Computer Science</span> at
               Vidyalankar Institute of Technology. I am skilled in{" "}
