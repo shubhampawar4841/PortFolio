@@ -34,7 +34,7 @@ export default function ProfileLinks() {
                 className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 <profile.icon className="text-4xl mb-2 text-gray-700" />
-                
+                 <span className="text-sm font-medium text-gray-600">{profile.name}</span>
               </a>
             </motion.div>
           ))}
