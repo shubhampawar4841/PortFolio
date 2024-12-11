@@ -2,12 +2,13 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { ExternalLink } from 'lucide-react';
+import type { StaticImageData } from "next/image";
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  tags: string[];
-  imageUrl: string;
+  tags: readonly string[];  // Updated to accept readonly arrays
+  imageUrl: StaticImageData;
   linkToProject: string;
 }
 
@@ -67,8 +68,6 @@ export default function ProjectCard({
         <Image
           src={imageUrl}
           alt={`Screenshot of ${title}`}
-          width={1000}
-          height={560}
           className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-lg shadow-xl
             transition duration-300
             group-hover:scale-[1.02]

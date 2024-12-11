@@ -102,13 +102,7 @@ export const projectsData = [
     title: "Dynamic Chat",
     description:
       "A real-time messaging app with authentication and online user status using Socket.io. It allows instant text chat and image sharing.",
-    tags: [
-      "React",
-      "Tailwind CSS",
-      "MERN",
-      "Socket.io",
-      "Zustand",
-    ],
+    tags: ["React", "Tailwind CSS", "MERN", "Socket.io", "Zustand"],
     imageUrl: Chat,
     linkToProject: "https://chat-application-production.onrender.com/",
   },
@@ -116,12 +110,7 @@ export const projectsData = [
     title: "WearHouse",
     description:
       "An eCommerce platform for fashion products. Built with React-JS and Material-UI, it provides a seamless shopping experience and smooth UI.",
-    tags: [
-      "ReactJS",
-      "CSS",
-      "Material UI",
-      "MongoDB",
-    ],
+    tags: ["ReactJS", "CSS", "Material UI", "MongoDB"],
     imageUrl: wearhouse,
     linkToProject: "https://ecommerce-web-five-psi.vercel.app/",
   },
@@ -129,12 +118,7 @@ export const projectsData = [
     title: "WeatherAPI",
     description:
       "A weather forecasting app that displays real-time weather conditions and weekly forecasts using open APIs.",
-    tags: [
-      "ReactJS",
-      "TailwindCSS",
-      "Weather API",
-      "Responsive UI",
-    ],
+    tags: ["ReactJS", "TailwindCSS", "Weather API", "Responsive UI"],
     imageUrl: weatherApiImg,
     linkToProject: "https://weather-app-react-7pyo.vercel.app/",
   },
