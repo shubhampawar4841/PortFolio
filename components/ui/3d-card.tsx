@@ -1,18 +1,17 @@
 "use client";
 
-import { cn } from "@/utils/cn";
-import Image from "next/image";
+import { cn } from "@/utils/cn"; // Ensure this utility is correctly implemented.
 import React, {
   createContext,
   useState,
   useContext,
   useRef,
   useEffect,
+  useMemo,
 } from "react";
+import throttle from "lodash.throttle"; // Import throttle for performance optimization.
 
-const MouseEnterContext = createContext<
-  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
->(undefined);
+const MouseEnterContext = createContext<boolean | undefined>(undefined);
 
 export const CardContainer = ({
   children,
@@ -26,27 +25,31 @@ export const CardContainer = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 25;
-    const y = (e.clientY - top - height / 2) / 25;
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-  };
+  const throttledMouseMove = useMemo(
+    () =>
+      throttle((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!containerRef.current) return;
+        const { left, top, width, height } =
+          containerRef.current.getBoundingClientRect();
+        const x = (e.clientX - left - width / 2) / 25;
+        const y = (e.clientY - top - height / 2) / 25;
+        containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+      }, 16), // 60 FPS
+    []
+  );
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = () => {
     setIsMouseEntered(true);
-    if (!containerRef.current) return;
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeave = () => {
     if (!containerRef.current) return;
     setIsMouseEntered(false);
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
   };
+
   return (
-    <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
+    <MouseEnterContext.Provider value={isMouseEntered}>
       <div
         className={cn(
           "py-20 flex items-center justify-center",
@@ -59,7 +62,7 @@ export const CardContainer = ({
         <div
           ref={containerRef}
           onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
+          onMouseMove={throttledMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
             "flex items-center justify-center relative transition-all duration-200 ease-linear",
@@ -86,7 +89,7 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
         className
       )}
     >
@@ -119,7 +122,7 @@ export const CardItem = ({
   [key: string]: any;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isMouseEntered] = useMouseEnter();
+  const isMouseEntered = useMouseEnter();
 
   useEffect(() => {
     handleAnimations();
@@ -128,7 +131,7 @@ export const CardItem = ({
   const handleAnimations = () => {
     if (!ref.current) return;
     if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+      ref.current.style.transform = `translateX(${translateX}) translateY(${translateY}) translateZ(${translateZ}) rotateX(${rotateX}) rotateY(${rotateY}) rotateZ(${rotateZ})`;
     } else {
       ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     }
@@ -145,7 +148,6 @@ export const CardItem = ({
   );
 };
 
-// Create a hook to use the context
 export const useMouseEnter = () => {
   const context = useContext(MouseEnterContext);
   if (context === undefined) {
