@@ -71,7 +71,7 @@ export default function AboutMe() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4, duration: 0.5 }}
           >
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">When I'm not coding</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">When I am not coding</h3>
             <div className="flex items-center space-x-6">
               <div className="flex items-center">
                 <FaGamepad className="text-gray-500 mr-2" />
