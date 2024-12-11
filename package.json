@@ -37,6 +37,7 @@
     "typescript": "5.4.3"
   },
   "devDependencies": {
+    "@types/lodash.throttle": "^4.1.9",
     "@types/react-vertical-timeline-component": "^3.3.6"
   }
 }
