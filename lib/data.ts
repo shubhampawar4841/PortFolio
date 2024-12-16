@@ -96,7 +96,7 @@ export const projectsData = [
       "The Medium.com Clone, with React and Cloudflare Workers, enables secure sign-in, content creation, and discovery of articles.",
     tags: ["ReactJS", "JWT", "Typescript", "PostgreSQL", "Serverless"],
     imageUrl: corpcommentImg,
-    linkToProject: "https://medium-clone-five-dusky.vercel.app/",
+    linkToProject: "https://medium-blogg-app.netlify.app",
   },
   {
     title: "Dynamic Chat",
