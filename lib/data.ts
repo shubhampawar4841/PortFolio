@@ -9,6 +9,8 @@ import Chat from "@/public/DynamicChat.jpg";
 import exploraStaysSS from "@/public/explora-stays-ss.png";
 import weatherApiImg from "@/public/weatherApiImg.png"
 import wearhouse from "@/public/WearHouse.png"
+import mongoHubImg from "@/public/MongooseHub.png"
+
 
 export const links = [
   {
@@ -115,6 +117,14 @@ export const projectsData = [
     linkToProject: "https://ecommerce-web-five-psi.vercel.app/",
   },
   {
+    title: "MongoHub",
+    description:
+      "MongoHub is a website to learn about MongoDB databases and all related concepts, based on my personal learnings.",
+    tags: ["React", "TailwindCSS", "JavaScript", "MongoDB"],
+    imageUrl: mongoHubImg, // Replace 'mongoHubImg' with the appropriate image reference
+    linkToProject: "https://mongoose-hub.vercel.app", // Replace with the actual link to your MongoHub project
+  },
+  {
     title: "WeatherAPI",
     description:
       "A weather forecasting app that displays real-time weather conditions and weekly forecasts using open APIs.",
@@ -123,6 +133,7 @@ export const projectsData = [
     linkToProject: "https://weather-app-react-7pyo.vercel.app/",
   },
 ] as const;
+
 
 export const skillsData = [
   "C/C++",

@@ -21,10 +21,10 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-96"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-96 "
       id="home"
     >
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center ">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
