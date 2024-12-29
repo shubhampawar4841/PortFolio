@@ -10,6 +10,7 @@ import exploraStaysSS from "@/public/explora-stays-ss.png";
 import weatherApiImg from "@/public/weatherApiImg.png"
 import wearhouse from "@/public/WearHouse.png"
 import mongoHubImg from "@/public/MongooseHub.png"
+import newsimg from "@/public/8D058X3FVt.png"
 
 
 export const links = [
@@ -121,8 +122,16 @@ export const projectsData = [
     description:
       "MongoHub is a website to learn about MongoDB databases and all related concepts, based on my personal learnings.",
     tags: ["React", "TailwindCSS", "JavaScript", "MongoDB"],
-    imageUrl: mongoHubImg, // Replace 'mongoHubImg' with the appropriate image reference
-    linkToProject: "https://mongoose-hub.vercel.app", // Replace with the actual link to your MongoHub project
+    imageUrl: mongoHubImg,
+    linkToProject: "https://mongoose-hub.vercel.app",
+  },
+    {
+    title: "DailyPulse",
+    description:
+      "A web application that fetches and displays the latest news using the NewsAPI. It provides real-time updates with user-friendly UI and error handling.",
+    tags: ["ReactJS", "TailwindCSS", "NewsAPI", "Responsive Design"],
+    imageUrl: newsimg, // Replace with the actual image link for your project
+    linkToProject: "https://github.com/shubhampawar4841/DailyPulse", // Replace with the deployment link of your project
   },
   {
     title: "WeatherAPI",
@@ -132,7 +141,9 @@ export const projectsData = [
     imageUrl: weatherApiImg,
     linkToProject: "https://weather-app-react-7pyo.vercel.app/",
   },
+
 ] as const;
+
 
 
 export const skillsData = [
