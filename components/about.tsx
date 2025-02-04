@@ -24,7 +24,7 @@ export default function AboutMe() {
             Final year student pursuing a Bachelor of Technology degree in{" "}
             <span className="font-semibold text-blue-600">Electronics and Computer Science</span> at
             Vidyalankar Institute of Technology. I am skilled in{" "}
-            <span className="font-semibold text-blue-600">full-stack web development and problem solving</span>.
+            <span className="font-semibold text-blue-600">full-stack web development</span>.
           </motion.p>
           <motion.p
             className="text-lg text-gray-600 mb-6 leading-relaxed"
