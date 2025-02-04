@@ -11,6 +11,8 @@ const profiles = [
   { name: "GeeksforGeeks", icon: SiGeeksforgeeks, url: "https://auth.geeksforgeeks.org/user/shubhampa9xnw" },
   { name: "Coding Ninjas", icon: SiCodingninjas, url: "https://www.naukri.com/code360/profile/Shubhamppawar" },
   { name: "Twitter", icon: FaTwitter, url: "https://twitter.com/shubhampawar484" },
+  { name: "LinkedIn", icon: FaLinkedin, url: "https://www.linkedin.com/in/shubhampawar4841" },
+
 ]
 
 export default function ProfileLinks() {
