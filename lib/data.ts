@@ -31,6 +31,10 @@ export const links = [
     hash: "#skills",
   },
   {
+    name:"Experience",
+    hash:"#experience",
+  },
+  {
     name: "Achievements",
     hash: "#Achievements",
   },
@@ -173,3 +177,20 @@ export const skillsData = [
   "ExpressJS",
   "REST APIs",
 ] as const;
+
+export const experienceData = [
+  {
+    title: "Software Developer Intern",
+    company: "Finora AI",
+    date: "March 2025 – Present",
+    description: `
+      • Contributing to the development of a SaaS platform integrating AI-driven solutions for investment advisors.
+      • Building and optimizing Next.js applications with TypeScript for seamless user experience.
+      • Implementing Prisma ORM for database interactions using Supabase as the backend.
+      • Enhancing UI components using TailwindCSS, Radix UI, and shadcn/ui for modern design.
+      • Managing authentication and security using Clerk.js.
+      • Collaborating with a fast-paced startup team to deliver scalable and innovative financial solutions.
+    `,
+    icon: "💼",
+  },
+];
