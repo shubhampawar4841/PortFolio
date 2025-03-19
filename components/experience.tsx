@@ -12,7 +12,7 @@ export default function Experience() {
         <div className="flex flex-col items-center justify-center mb-12 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-primary">Work Experience</h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-[700px]">
-            My professional journey and the skills I've developed along the way.
+            My professional journey and the skills I&apos;ve developed along the way.
           </p>
         </div>
 
